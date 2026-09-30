@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Yaha changes kiye gaye hain: user-scalable=no add kiya gaya hai -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SIH Project Gateway | SIH26072</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
@@ -12,7 +11,6 @@
             padding: 0; 
             box-sizing: border-box; 
             font-family: 'Inter', sans-serif; 
-            /* Double-tap zoom ko rokne ke liye */
             touch-action: manipulation;
         }
         
@@ -27,7 +25,6 @@
             align-items: center; 
             justify-content: center; 
             padding: 1rem; 
-            /* Safari/iOS me overscroll bounce ko rokne ke liye */
             overscroll-behavior: none; 
         }
 
@@ -46,7 +43,6 @@
             overflow: hidden;
         }
 
-        /* Subtle glow behind the container */
         .container::before {
             content: '';
             position: absolute;
@@ -169,7 +165,6 @@
         .server-card h2 { font-size: 1.3rem; font-weight: 600; color: #f8fafc; }
         .server-card span { font-size: 0.85rem; color: #94a3b8; font-weight: 500;}
         
-        /* Floating animation for icons */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-5px); }
@@ -185,7 +180,6 @@
             animation-delay: 1s;
         }
         
-        /* Mobile Layout Adjustments */
         @media (max-width: 650px) {
             body { padding: 0.8rem; }
             .container { padding: 1.5rem; border-radius: 1.2rem; }
@@ -223,32 +217,30 @@
             <span class="ps-badge">PS: SIH26072</span>
         </div>
         
+        <!-- Updated Reason for Evaluators -->
         <div class="notice">
             <h3>⚠️ Important Note for Evaluators</h3>
-            <p>Our backend services are currently hosted on <strong>Render's Free Tier</strong>. Due to platform policies, free instances automatically "spin down" (go to sleep) after 15 minutes of inactivity.</p>
-            <p>As a result, <strong>the first request may take 50-60 seconds</strong> to wake the server up. To ensure a seamless evaluation experience, we have provided a redundant <strong>Backup Server</strong>.</p>
+            <p>To ensure a highly available and seamless evaluation experience, we have implemented a <strong>Dual-Server Architecture</strong>.</p>
+            <p>As our backend services are currently hosted on free-tier environments, the primary instance might occasionally face resource exhaustion or rate-limiting during high concurrent traffic. If the Main Server is unreachable, please seamlessly switch to our <strong>Secondary Backup Server</strong>.</p>
         </div>
 
         <div class="server-grid">
-            <!-- Main Server Link Updated -->
             <a href="https://thunderbird-rywr.onrender.com/" class="server-card" target="_blank">
                 <div class="icon">🚀</div>
                 <div class="card-text">
                     <h2>Main Server</h2>
-                    <span>Primary Render Instance</span>
+                    <span>Primary Instance</span>
                 </div>
             </a>
             
-            <!-- Backup Server Link Updated -->
             <a href="https://thunderbird-rywr.onrender.com/" class="server-card backup" target="_blank">
                 <div class="icon">🛡️</div>
                 <div class="card-text">
                     <h2>Backup Server</h2>
-                    <span>Secondary Fallback Instance</span>
+                    <span>Secondary Fallback</span>
                 </div>
             </a>
         </div>
     </div>
 </body>
-  </html>
-  
+</html>
